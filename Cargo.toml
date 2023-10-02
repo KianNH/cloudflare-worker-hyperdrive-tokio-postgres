@@ -1,0 +1,19 @@
+[package]
+name = "hyperdrive-tokio-postgres"
+version = "0.0.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+cfg-if = "1.0.0"
+worker = "0.0.18"
+tokio-postgres = { git = "https://github.com/devsnek/rust-postgres/", branch = "unnamed-statement", features = ['js'], default-features = false }
+console_error_panic_hook = { version = "0.1.1", optional = true }
+
+[profile.release]
+opt-level = "s"

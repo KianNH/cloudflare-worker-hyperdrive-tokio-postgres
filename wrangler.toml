@@ -1,0 +1,10 @@
+name = "hyperdrive-tokio-postgres"
+main = "build/worker/shim.mjs"
+compatibility_date = "2023-10-02"
+
+[build]
+command = "cargo install -q worker-build --version 0.0.10 && worker-build --release"
+
+[[hyperdrive]]
+binding = "HYPERDRIVE"
+id = "2401abde267849af8e38bf582c0e8bf8"
